@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
+  </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import {mapActions} from 'vuex'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    ...mapActions(['GET_CARS_FROM_API', 'GET_TRUCK_FROM_API'])
+  },
+  mounted() {
+    this.GET_CARS_FROM_API(),
+    this.GET_TRUCK_FROM_API()
   }
 }
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 </style>
