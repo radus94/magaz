@@ -316,6 +316,21 @@
       "Origin": "USA",
       "Image": "AMC_Ambassador.jpg",
       "Price": 10000
+    },
+    {
+      "id": 1607370093426,
+      "Marc": "bmw",
+      "Model": "Seriess 3",
+      "Miles_per_Gallon": 0,
+      "Cylinders": 0,
+      "Displacement": 0,
+      "Horsepower": 0,
+      "Weight_in_lbs": 0,
+      "Acceleration": 0,
+      "Year": "1222",
+      "Origin": "",
+      "Image": "no-image.png",
+      "Price": 0
     }
   ]
 }
