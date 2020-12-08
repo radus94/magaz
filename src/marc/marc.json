@@ -1,0 +1,6 @@
+{
+    "bmw": ["Series 3", "Series 5", "Series 7"],
+    "mercedes": ["190", "C Class", "E Class"],
+    "audi": ["A3", "A6", "A8"],
+    "renault": ["Megane", "Clio", "Captura"]
+}

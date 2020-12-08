@@ -21,12 +21,24 @@ export default {
       buttons: [
         {
           title: "Autoturisme",
-          descrption: "Desc",
+          descrption: "Tot transportul ce intra in categoria 'B'",
           url: "/vehicles/autoturisme"
         },
-        { title: "Camiaone", descrption: "Desc", url: "/vehicles/camioane" },
-        { title: "Autobuse/Microbuse", descrption: "Desc", url: "/#" },
-        { title: "Moto", descrption: "Desc", url: "/#" }
+        {
+          title: "Camiaone",
+          descrption: "Tot transportul ce intra in categoria 'C' si 'D'",
+          url: "/vehicles/camioane"
+        },
+        {
+          title: "Autobuse/Microbuse",
+          descrption: "Tot transportul ce intra in categoria 'C' si 'D'",
+          url: "/#"
+        },
+        {
+          title: "Moto",
+          descrption: "Tot transportul ce intra in categoria 'A'",
+          url: "/#"
+        }
       ]
     };
   },
@@ -48,6 +60,7 @@ export default {
     width: calc(100% / 2);
     border: 1px solid black;
     border-radius: 4px;
+    padding: 10px 0;
   }
 }
 </style>

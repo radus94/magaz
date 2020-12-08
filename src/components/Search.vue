@@ -2,6 +2,7 @@
   <div class="search">
     <input type="text" />
     <button>search</button>
+    <router-link class="add-btn" to="/add-auto">ADD</router-link>
   </div>
 </template>
 
@@ -13,10 +14,21 @@
     height: 30px;
   }
   input {
-    width: 75%;
+    width: 70%;
   }
   button {
-    width: 25%;
+    width: 20%;
+  }
+  .add-btn {
+    width: 10%;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px 0 5px 0;
+    background-color:teal;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
   }
 }
 </style>

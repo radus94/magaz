@@ -1,20 +1,17 @@
 <template>
   <div class="add-auto">
     <h1>Add Auto</h1>
-    <form action="add-auto">
+    <form class="add-auto-form" action="add-auto">
+      <!-- <input type="file"  name="" id=""> -->
       <label for="marca">Marc</label>
       <select name="marca" id="marca" v-model="parameters.Marc">
         <option value="" hidden></option>
-        <option value="bmw">BMW</option>
-        <option value="mercedes">Mercedes</option>
+        <option v-for="(item, id) in getMarcKey()" :key="id" :value="item">{{capitalize(item)}}</option>
       </select>
       <label for="model">Model</label>
       <select name="model" id="model" v-model="parameters.Model">
         <option value="" hidden></option>
-        <option value="E 30">E 30</option>
-        <option value="E 34">E 34</option>
-        <option value="190">190</option>
-        <option value="E Class">E Class</option>
+        <option v-for="(item, id) in marcs[parameters.Marc]" :key="id" :value="item" >{{capitalize(item)}}</option>
       </select>
       <label for="year">An</label>
       <input type="text" name="year" id="year" v-model="parameters.Year"/>
@@ -29,6 +26,8 @@
 
 <script>
 import {mapActions, mapGetters} from 'vuex'
+import marcsJosn from '../marc/marc.json'
+
 export default {
   data() {
     return {
@@ -47,7 +46,8 @@ export default {
         Image: "no-image.png",
         Price: 0
       },
-      type: 'autoturisme'
+      type: 'autoturisme',
+      marcs: marcsJosn,
     };
   },
   computed: {
@@ -55,8 +55,11 @@ export default {
       ...mapGetters(['CARS'])
   },
   methods: {
-    getParam() {
-        console.log(this.parameters)
+    capitalize(item) {
+        return item.charAt(0).toUpperCase() + item.slice(1)
+    },
+    getMarcKey(){
+        return Object.keys(this.marcs)
     },
     addCar(payload) {
         payload.id = Date.now()
@@ -66,3 +69,25 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.add-auto {
+    width: 50%;
+    margin: 0 auto;
+    .add-auto-form {
+        display: flex;
+        flex-direction: column;
+        input, select {
+            height: 30px;
+        }
+        label {
+            margin-top: 5px;
+        }
+    }
+    button {
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+        }
+}
+</style>

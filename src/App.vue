@@ -29,6 +29,9 @@ export default {
   padding: 0;
   margin: 0;
 }
+a {
+  text-decoration: none
+}
 #app {
   color: #2c3e50;
 }
@@ -36,4 +39,5 @@ export default {
   width: 90%;
   margin: 0 auto;
 }
+
 </style>
